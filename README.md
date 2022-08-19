@@ -15,6 +15,9 @@ Rename or copy `.env.example` file to `.env`
 
 Set your database credentials in your `.env` file
 
+Don't forget Set your database for test I'm using mysql for test not sqlite.
+
+create database `ticket_test` for unit test.
 
 `composer install`
 
@@ -43,6 +46,7 @@ Postman Collection in root project  : `Ticket-ExpertApps.postman_collection`
 
 
 ### TODO
+- [] use Services instead of Repository design pattern.
 - [] Complete Curd - custom pagination
 - [] API Documentation with Swagger
 - [] todo more Unit test

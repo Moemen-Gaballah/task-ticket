@@ -37,7 +37,8 @@ class TicketTest extends TestCase
             'category_id' => $category->id
         ], ['Accept' => 'application/json']);
 
-        $response->assertStatus(200); // add assert json structure
+        // TODO Assert DatabaseHas + assert json structure
+        $response->assertStatus(200);
     }
 
 
