@@ -6,7 +6,7 @@ use App\Models\Ticket;
 
 interface TicketRepositoryInterface
 {
-    public function get($take = 12);
+    public function get($data);
 
     public function find(int $id);
 

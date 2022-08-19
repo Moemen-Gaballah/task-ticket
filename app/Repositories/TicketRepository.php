@@ -9,8 +9,14 @@ use App\Repositories\Interfaces\TicketRepositoryInterface;
 class TicketRepository implements TicketRepositoryInterface
 {
 
-    public function get($take = 12){
-        return Ticket::active()->with('category:id,name')->select('id', 'name', 'category_id')->paginate($take);
+    public function get($data){
+
+
+        $pageSize = (isset($data['per_page']) && (int) $data['per_page']) ? (int) $data['per_page'] : Ticket::perPage;
+
+
+
+        return Ticket::active()->filterBy(request()->all())->with('category:id,name')->select('id', 'name', 'category_id')->paginate($pageSize);
     }
 
     public function find($id){

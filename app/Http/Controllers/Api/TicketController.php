@@ -28,8 +28,7 @@ class TicketController extends Controller
     public function index(Request $request)
     {
 
-        $pageSize = $request->page_size ?? '12';
-        $tickets = $this->ticketRepository->get($pageSize);
+        $tickets = $this->ticketRepository->get($request->all());
 
         return $this->sendResponse($tickets);
     }
