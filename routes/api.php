@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\TicketController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+Route::group(['prefix'=>'v1', ], function(){
+    // its best
+//    Route::apiResource('tickets', TicketController::class);
+
+    // do it as requirement
+    Route::post('ticket/add', [TicketController::class, 'store']);
+    Route::put('ticket/edit/{id}', [TicketController::class, 'update']);
+    Route::get('ticket/list', [TicketController::class, 'index']);
+
 });
