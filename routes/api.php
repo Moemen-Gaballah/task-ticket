@@ -21,13 +21,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::group(['prefix'=>'v1', ], function(){
+Route::group(['prefix'=>'v1', 'as' => 'api.'], function(){
     // its best
 //    Route::apiResource('tickets', TicketController::class);
 
     // do it as requirement
-    Route::post('ticket/add', [TicketController::class, 'store']);
-    Route::put('ticket/edit/{id}', [TicketController::class, 'update']);
-    Route::get('ticket/list', [TicketController::class, 'index']);
+    Route::post('ticket/add', [TicketController::class, 'store'])->name('ticket.create');
+    Route::put('ticket/edit/{id}', [TicketController::class, 'update'])->name('ticket.update');
+    Route::get('ticket/list', [TicketController::class, 'index'])->name('ticket.list');
 
 });
