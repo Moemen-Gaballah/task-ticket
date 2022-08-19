@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "6397477a-185a-4ff0-8a92-d6f60fd9742c",
+		"name": "Ticket-ExpertApps",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllTicket",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{local}}/ticket/list?per_page=12&name=name 02&category[]=1&category[]=5",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"ticket",
+						"list"
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "12"
+						},
+						{
+							"key": "name",
+							"value": "name 02"
+						},
+						{
+							"key": "category[]",
+							"value": "1"
+						},
+						{
+							"key": "category[]",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addTicket",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "name 01",
+							"type": "default"
+						},
+						{
+							"key": "description",
+							"value": "description 01",
+							"type": "default"
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}/ticket/add",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"ticket",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editTicket",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "PUT",
+							"type": "default"
+						},
+						{
+							"key": "name",
+							"value": "name 01 update",
+							"type": "default"
+						},
+						{
+							"key": "description",
+							"value": "description 01 update",
+							"type": "default"
+						},
+						{
+							"key": "category_id",
+							"value": "2",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}/ticket/edit/155",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"ticket",
+						"edit",
+						"155"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
