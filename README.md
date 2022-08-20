@@ -33,9 +33,11 @@ run test `php artisan test`
 
 `http://127.0.0.1:8000/`
 
+End Point: `http://127.0.0.1:8000/api/v1/`
+
 [//]: # (Basic API Documentation : `http://127.0.0.1:8000/request-docs`)
 
-Postman Collection in root project  : `Ticket-ExpertApps.postman_collection`
+Postman Collection in root project  : `Ticket-ExpertApps.postman_collection.json`
 
 ### Done
 
