@@ -47,7 +47,7 @@ class Handler extends ExceptionHandler
         $this->renderable(function (\Exception $e, $request) {
             if($request->is('api/*')) {
 
-                // TODO Test
+                // TODO Test && check isset key
                 if($e instanceOf ValidationException)
                 {
                     $keyMsgError = array_keys($e->validator->errors()->messages())[0];

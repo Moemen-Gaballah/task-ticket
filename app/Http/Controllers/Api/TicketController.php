@@ -27,10 +27,9 @@ class TicketController extends Controller
      */
     public function index(Request $request)
     {
-
         $tickets = $this->ticketRepository->get($request->all());
 
-        return $this->sendResponse($tickets);
+        return $this->sendResponse(TicketResource::collection($tickets)->response()->getData(true));
     }
 
 
