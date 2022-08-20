@@ -15,7 +15,7 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // Should be string for size
+            $table->string('name');
             $table->text('description');
             $table->unsignedBigInteger('category_id')->index();
             $table->boolean('status')->default(1);
