@@ -39,11 +39,6 @@ class TicketTest extends TestCase
 
         // TODO Assert DatabaseHas + assert json structure + assertDatabaseCount
         $response->assertStatus(200);
-//        $this->assertDatabaseCount('tickets', 1)->assertDatabaseHas('tickets', [
-//            'name' => 'name 01 test api',
-//            'description' => 'description 01 test api',
-//            'category_id' => $category->id
-//        ]);
     }
 
 
